@@ -56,9 +56,9 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
+    icon: "/ntu-logo.png",
+    shortcut: "/ntu-logo.png",
+    apple: "/ntu-logo.png",
   },
 };
 
@@ -75,6 +75,7 @@ export default function RootLayout({
     >
       <head>
         <link rel="icon" href="/ntu-logo.png" />
+        <link rel="apple-touch-icon" href="/ntu-logo.png" />
         <meta name="theme-color" content="#081d2b" />
         {/* Google tag (gtag.js) - placed immediately after <head> */}
         <Script
