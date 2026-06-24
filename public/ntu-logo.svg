@@ -1,0 +1,13 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ntuGrad" x1="32" y1="24" x2="220" y2="232" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3FE4FF"/>
+      <stop offset="1" stop-color="#FF8D5C"/>
+    </linearGradient>
+  </defs>
+  <rect x="20" y="20" width="216" height="216" rx="48" fill="#0A2233"/>
+  <rect x="26" y="26" width="204" height="204" rx="42" stroke="url(#ntuGrad)" stroke-width="8"/>
+  <path d="M66 178V78H86L127 140V78H148V178H128L87 116V178H66Z" fill="url(#ntuGrad)"/>
+  <path d="M159 78H220V98H199V178H179V98H159V78Z" fill="url(#ntuGrad)"/>
+  <path d="M43 204H213" stroke="url(#ntuGrad)" stroke-width="6" stroke-linecap="round"/>
+</svg>
