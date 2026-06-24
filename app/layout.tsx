@@ -4,6 +4,8 @@ import Script from "next/script";
 import Analytics from "./components/Analytics";
 import "./globals.css";
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://apnagpa.surge.sh";
+
 const outfit = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
@@ -15,12 +17,48 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "NTU GPA Calculator",
   description: "A polished and animated GPA platform for NTU students.",
+  keywords: [
+    "NTU GPA calculator",
+    "GPA planner",
+    "GPA tracker",
+    "NTU student tools",
+    "academic calculator",
+    "semester grade estimator",
+    "online GPA calculator",
+  ],
+  openGraph: {
+    title: "NTU GPA Calculator",
+    description: "A polished and animated GPA platform for NTU students.",
+    url: SITE_URL,
+    siteName: "NTU GPA Calculator",
+    type: "website",
+    images: [
+      {
+        url: `${SITE_URL}/ntu-logo.png`,
+        width: 1200,
+        height: 630,
+        alt: "NTU GPA Calculator",
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
   icons: {
-    icon: "/ntu-logo.png",
-    shortcut: "/ntu-logo.png",
-    apple: "/ntu-logo.png",
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
   },
 };
 
