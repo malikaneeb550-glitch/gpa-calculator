@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/ntu-logo.svg",
+    icon: "/ntu-logo.png",
     shortcut: "/ntu-logo.png",
     apple: "/ntu-logo.png",
   },
@@ -74,7 +74,9 @@ export default function RootLayout({
       className={`${outfit.variable} ${sora.variable} h-full antialiased`}
     >
       <head>
-        <link rel="icon" href="/ntu-logo.png" />
+        <link rel="icon" href="/ntu-logo.png" sizes="32x32" />
+        <link rel="icon" href="/ntu-logo.png" type="image/png" sizes="32x32" />
+        <link rel="shortcut icon" href="/ntu-logo.png" type="image/png" />
         <link rel="apple-touch-icon" href="/ntu-logo.png" />
         <meta name="theme-color" content="#081d2b" />
         {/* Google tag (gtag.js) - placed immediately after <head> */}
