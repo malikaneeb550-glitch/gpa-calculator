@@ -138,14 +138,7 @@ export function SiteHeader({
             </MagneticButton>
           )}
 
-          {/* Compact mobile CTA: visible on small screens only when not on calculator page */}
-          {!isCalculatorPage && (
-            <MagneticButton href="/calculator" className="site-header__cta-mobile md:hidden" >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </MagneticButton>
-          )}
+          {/* Compact mobile CTA removed to avoid duplicate arrow icon */}
 
           <MobileNav
             links={navLinks.map((l) => ({ ...l, href: getHref(l.href) }))}
