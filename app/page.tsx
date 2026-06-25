@@ -113,13 +113,7 @@ function FeatureIcon({ type }: { type: string }) {
 }
 
 export default function Home() {
-  const [theme, setTheme] = useState<string>(() => {
-    try {
-      return localStorage.getItem("ntu_theme") || "dark";
-    } catch {
-      return "dark";
-    }
-  });
+  const [theme, setTheme] = useState<string>("dark");
 
   const { scrollY } = useScroll();
   const heroParallax = useTransform(scrollY, [0, 400], [0, -60]);
@@ -129,6 +123,17 @@ export default function Home() {
     const unsubscribe = scrollY.on("change", (v) => setScrolled(v > 40));
     return () => unsubscribe();
   }, [scrollY]);
+
+  useEffect(() => {
+    try {
+      const storedTheme = localStorage.getItem("ntu_theme");
+      if (storedTheme === "light" || storedTheme === "dark") {
+        setTheme(storedTheme);
+      }
+    } catch {
+      // ignore client storage errors
+    }
+  }, []);
 
   useEffect(() => {
     if (typeof document === "undefined") return;
@@ -212,7 +217,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.25, duration: 0.55 }}
             >
-              A fully animated and professional GPA experience for NTU students to plan smarter,
+              A fully  professional GPA experience for NTU students to plan smarter,
               forecast outcomes, and stay in control of academic goals.
             </motion.p>
 

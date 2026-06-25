@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/ntu-logo.png",
+    icon: "/ntu-logo.svg",
     shortcut: "/ntu-logo.png",
     apple: "/ntu-logo.png",
   },

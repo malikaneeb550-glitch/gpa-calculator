@@ -184,13 +184,7 @@ SubjectCard.displayName = "SubjectCard";
 
 export default function CalculatorPage() {
   /* ── All state declarations first ── */
-  const [theme, setTheme] = useState<string>(() => {
-    try {
-      return localStorage.getItem("ntu_theme") || "dark";
-    } catch {
-      return "dark";
-    }
-  });
+  const [theme, setTheme] = useState<string>("dark");
   const [scrolled, setScrolled] = useState(false);
   const [isHydrated, setIsHydrated] = useState(false);
   const [showParticleLayer, setShowParticleLayer] = useState(true);
@@ -256,6 +250,17 @@ export default function CalculatorPage() {
       // ignore write errors
     }
   }, [subjectCount, subjects, isHydrated]);
+
+  useEffect(() => {
+    try {
+      const storedTheme = localStorage.getItem("ntu_theme");
+      if (storedTheme === "light" || storedTheme === "dark") {
+        setTheme(storedTheme);
+      }
+    } catch {
+      // ignore client storage errors
+    }
+  }, []);
 
   useEffect(() => {
     if (typeof document === "undefined") return;
